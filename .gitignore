@@ -1,0 +1,29 @@
+# --- Dados de terceiros: nao redistribuir, pesados, reproduziveis ---
+data/
+*.tar.gz
+*.tgz
+*.vcf
+*.vcf.gz
+*.tbi
+*.csi
+*.bcf
+
+# --- Caches e dados derivados pesados ---
+*.npz
+results/ancestry_matrix.npz
+results/dpyd_haplotypes.csv
+results/dpyd_genotypes.csv
+
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# --- SO / editores ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

@@ -1,0 +1,6 @@
+rsid,chrom,pos,ref,alt,ensembl_alleles,star,hgvs,function,activity,in_eurocentric_panel
+rs3918290,1,97450058,C,T,C/A/G/T,DPYD*2A,c.1905+1G>A,No function,0.0,True
+rs55886062,1,97515787,A,C,A/C/T,DPYD*13,c.1679T>G,No function,0.0,True
+rs67376798,1,97082391,T,A,T/A,-,c.2846A>T,Decreased function,0.5,True
+rs75017182,1,97579893,G,C,G/A/C/T,HapB3,c.1129-5923C>G,Decreased function,0.5,True
+rs115232898,1,97699474,T,C,T/A/C,-,c.557A>G,Decreased function,0.5,False

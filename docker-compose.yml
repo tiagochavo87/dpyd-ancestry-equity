@@ -1,0 +1,8 @@
+services:
+  pgx:
+    build: .
+    container_name: dpyd-pgx
+    working_dir: /app
+    volumes:
+      - .:/app
+    command: ["python", "run_pipeline.py"]

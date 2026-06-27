@@ -1,0 +1,112 @@
+======================================================================
+ RELATORIO DE RESULTADOS - DPYD x ANCESTRALIDADE
+ Projeto exploratorio | gerado em 2026-06-21 23:03
+======================================================================
+
+1. ESCOPO E METODOLOGIA
+----------------------------------------------------------------------
+Exploracao da cobertura do teste de DPYD (toxicidade a fluoropirimidinas/5-FU)
+entre ancestralidades, usando dados publicos.
+
+- Dados: 1000 Genomes Project, GRCh38, release bialelico fasado (IGSR/EBI).
+- Variantes e funcao alelica: diretriz CPIC para DPYD/fluoropirimidinas.
+- Posicoes resolvidas via Ensembl REST (GRCh38); casamento por posicao.
+- Escore de atividade DPYD pela regra CPIC: cada haplotipo recebe o MENOR
+  valor de atividade entre as variantes que carrega (1.0 se nenhuma); o
+  escore do gene e a soma dos dois haplotipos (trata homo, hetero e
+  heterozigoto composto). Fenotipo: 2=Normal; 1 a 1.5=Intermediario; <1=Pobre.
+- "Painel eurocentrico" = as 4 variantes tier-1 do teste padrao.
+- Frequencias com intervalo de confianca de Wilson (95%).
+
+2. PAINEL DE VARIANTES (CPIC)
+----------------------------------------------------------------------
+       rsid    star           hgvs           function  activity  in_eurocentric_panel
+  rs3918290 DPYD*2A    c.1905+1G>A        No function       0.0                  True
+ rs55886062 DPYD*13      c.1679T>G        No function       0.0                  True
+ rs67376798       -      c.2846A>T Decreased function       0.5                  True
+ rs75017182   HapB3 c.1129-5923C>G Decreased function       0.5                  True
+rs115232898       -       c.557A>G Decreased function       0.5                 False
+
+3. AMOSTRAS POR SUPERPOPULACAO
+----------------------------------------------------------------------
+super_pop
+AFR       661
+AMR       347
+EAS       504
+EUR       503
+SAS       489
+TOTAL    2504
+
+4. FREQUENCIA ALELICA POR SUPERPOPULACAO (%)
+----------------------------------------------------------------------
+super_pop      AFR    AMR  EAS    EUR    SAS
+rsid                                        
+rs115232898  2.273  0.288  0.0  0.000  0.000
+rs3918290    0.076  0.144  0.0  0.497  0.818
+rs55886062   0.000  0.000  0.0  0.099  0.000
+rs67376798   0.076  0.288  0.0  0.696  0.102
+rs75017182   0.076  0.576  0.0  2.386  1.943
+
+   Detalhe com IC95% (Wilson):
+       rsid super_pop  freq_%        IC95_%  n_alleles
+  rs3918290       AFR   0.076 [0.01 - 0.43]       1320
+  rs3918290       AMR   0.144 [0.03 - 0.81]        694
+  rs3918290       EAS   0.000  [0.0 - 0.38]       1008
+  rs3918290       EUR   0.497 [0.21 - 1.16]       1006
+  rs3918290       SAS   0.818 [0.42 - 1.61]        978
+ rs55886062       AFR   0.000  [0.0 - 0.29]       1320
+ rs55886062       AMR   0.000  [0.0 - 0.55]        694
+ rs55886062       EAS   0.000  [0.0 - 0.38]       1008
+ rs55886062       EUR   0.099 [0.02 - 0.56]       1006
+ rs55886062       SAS   0.000  [0.0 - 0.39]        978
+ rs67376798       AFR   0.076 [0.01 - 0.43]       1320
+ rs67376798       AMR   0.288 [0.08 - 1.04]        694
+ rs67376798       EAS   0.000  [0.0 - 0.38]       1008
+ rs67376798       EUR   0.696 [0.34 - 1.43]       1006
+ rs67376798       SAS   0.102 [0.02 - 0.58]        978
+ rs75017182       AFR   0.076 [0.01 - 0.43]       1320
+ rs75017182       AMR   0.576 [0.22 - 1.47]        694
+ rs75017182       EAS   0.000  [0.0 - 0.38]       1008
+ rs75017182       EUR   2.386 [1.61 - 3.53]       1006
+ rs75017182       SAS   1.943 [1.25 - 3.01]        978
+rs115232898       AFR   2.273  [1.6 - 3.23]       1320
+rs115232898       AMR   0.288 [0.08 - 1.04]        694
+rs115232898       EAS   0.000  [0.0 - 0.38]       1008
+rs115232898       EUR   0.000  [0.0 - 0.38]       1006
+rs115232898       SAS   0.000  [0.0 - 0.39]        978
+
+5. DISTRIBUICAO DE FENOTIPOS DPYD POR SUPERPOPULACAO (%)
+----------------------------------------------------------------------
+           Metabolizador pobre  Metabolizador intermediario  Metabolizador normal
+super_pop                                                                        
+AFR                        0.0                          4.8                  95.2
+AMR                        0.0                          2.6                  97.4
+EAS                        0.0                          0.0                 100.0
+EUR                        0.0                          7.2                  92.8
+SAS                        0.2                          5.1                  94.7
+
+6. COBERTURA DO PAINEL EUROCENTRICO (EQUIDADE)
+----------------------------------------------------------------------
+             n  at_risk  captados_euro  perdidos_euro  pct_perdidos
+super_pop                                                          
+AFR        660       32              3             29          90.6
+AMR        347        9              7              2          22.2
+EAS        504        0              0              0           NaN
+EUR        503       36             36              0           0.0
+SAS        489       26             26              0           0.0
+
+   Leitura: 'perdidos_euro' = portadores de risco (metabolismo
+   reduzido) que o painel tier-1 padrao NAO sinalizaria.
+
+7. RESSALVAS
+----------------------------------------------------------------------
+- Analise EXPLORATORIA, sem fim de inferencia clinica definitiva.
+- 1000 Genomes e painel de referencia populacional, NAO uma coorte de
+  pacientes; o trabalho mede cobertura sobre PORTADORES de variantes, nao
+  desfechos clinicos medidos de toxicidade.
+- Numero de portadores por grupo pode ser pequeno (ver n_alleles e IC).
+- Frequencia baixa de variantes acionaveis em alguma ancestralidade pode
+  refletir lacuna de pesquisa (vies de ascertainment) e nao ausencia de risco.
+- A fase dos haplotipos vem do painel fasado do 1000 Genomes.
+
+======================================================================
