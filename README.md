@@ -8,7 +8,7 @@ other ancestries equally?
 Short answer, reproduced from public data: no. And you can predict who it fails
 from genome-wide ancestry alone.
 
-![Equity composite](figures/figure_composite.png)
+![Equity overview](figures/equity_bar.png)
 
 > Honest framing up front. This is a reproduction of a known, published problem,
 > not a discovery. It is an exploratory analysis over a population reference panel
