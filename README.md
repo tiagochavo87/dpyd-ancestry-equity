@@ -170,10 +170,13 @@ data/  results/  figures/
 - Ensembl REST API (variant to GRCh38 coordinate resolution).
 - ABraOM, SABE-1171-WGS. Naslavsky et al. (please cite when using the Brazilian
   data, as the database requires).
-
-If you publish or present this, complete the literature citations above with the
-exact references for the British Journal of Cancer and Journal of Clinical
-Oncology articles mentioned in Scope.
+- Chan TH, Zhang JE, Pirmohamed M. DPYD genetic polymorphisms in non-European
+patients with severe fluoropyrimidine-related toxicity: a systematic review.
+Br J Cancer. 2024. https://doi.org/10.1038/s41416-024-02754-z
+- Rodriguez GM, et al. Characterization of DPYD variants across ancestries in a
+large real-world cohort of cancer patients. J Clin Oncol. 2026;44(suppl
+4):814. https://doi.org/10.1200/JCO.2026.44.2_suppl.814 (ASCO GI Cancers
+Symposium abstract)
 
 ---
 
